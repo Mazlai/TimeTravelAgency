@@ -1,5 +1,7 @@
 # TimeTravelAgency
 
+*Présenté par Mickael FERNANDEZ - M2 Web*
+
 Agence de voyage temporel fictive de luxe — site web promotionnel construit avec Next.js 15 et l'IA générative.
 
 > « Le passé vous appartient. Nous vous y emmenons. »
