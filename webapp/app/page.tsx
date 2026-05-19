@@ -58,13 +58,41 @@ export default function Home() {
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, oklch(0.20 0.06 265) 0%, oklch(0.09 0.025 265) 55%), " +
-            "repeating-linear-gradient(0deg, transparent, transparent 79px, oklch(0.72 0.13 82 / 0.04) 80px), " +
-            "repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0.72 0.13 82 / 0.04) 80px)",
-        }}
       >
+        {/* Cinematic background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 0 }}
+        >
+          <source src="/medias/videos/Cinematic_Eiffel_Tower_Dolly_Zoom.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark overlay — preserves legibility and applies the navy tint */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, oklch(0.06 0.025 265 / 0.75) 0%, oklch(0.09 0.025 265 / 0.88) 60%, oklch(0.09 0.025 265) 100%)",
+            zIndex: 1,
+          }}
+        />
+
+        {/* Subtle grid pattern on top of the overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "repeating-linear-gradient(0deg, transparent, transparent 79px, oklch(0.72 0.13 82 / 0.03) 80px), " +
+              "repeating-linear-gradient(90deg, transparent, transparent 79px, oklch(0.72 0.13 82 / 0.03) 80px)",
+            zIndex: 2,
+          }}
+        />
+
         {/* Decorative orbit rings */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
@@ -72,6 +100,7 @@ export default function Home() {
             width: 600,
             height: 600,
             border: "1px solid oklch(0.72 0.13 82 / 0.08)",
+            zIndex: 3,
           }}
         />
         <div
@@ -80,6 +109,7 @@ export default function Home() {
             width: 900,
             height: 900,
             border: "1px solid oklch(0.72 0.13 82 / 0.05)",
+            zIndex: 3,
           }}
         />
 

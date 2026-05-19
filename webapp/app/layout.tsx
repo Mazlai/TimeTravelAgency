@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import { ChatWidget } from '@/components/chat-widget'
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="fr" className={`${geist.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
+        <ChatWidget />
       </body>
     </html>
   )
